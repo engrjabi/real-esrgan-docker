@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  real-esrgan: &real-esrgan
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: real-esrgan:latest
+    container_name: real-esrgan
+    volumes:
+      - ./inputs:/app/inputs
+      - ./results:/app/results
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
